@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Head from 'next/head'
+import styles from "./Layout.module.scss";
 
 export const Layout = (props) => {
   return (
@@ -22,7 +23,7 @@ export const Layout = (props) => {
           <a>Posts</a>
         </Link>
       </header>
-      <main>{props.children}</main>
+      <main className={styles.main}>{props.children}</main>
     </div>
   )
 }

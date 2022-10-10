@@ -1,0 +1,46 @@
+@import "/public/styles/global.scss";
+
+.image_text_50 {
+    padding: 60px 20px;
+    @include grid;
+
+
+    .text {
+        grid-column: auto / span 24;
+        order: 2;
+
+        @include tablet-min {
+          grid-column: auto / span 12;
+        }
+        
+    }
+
+    .image {
+        grid-column: auto / span 24;
+        order: 1;
+
+        @include tablet-min {
+          grid-column: auto / span 12;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+    }
+
+    &--img_right {
+        
+            .text {
+                order: 1;     
+            }
+
+            .image {
+                order: 2;           
+            }
+        
+    }
+}
+

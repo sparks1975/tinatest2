@@ -1,6 +1,7 @@
 import { Layout } from "../../components/Layout";
 import { useTina } from "tinacms/dist/edit-state";
 import { client } from "../../.tina/__generated__/client";
+import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export default function Home(props) {
   // data passes though in production mode and data is updated to the sidebar data in edit-mode
@@ -21,6 +22,8 @@ export default function Home(props) {
           {JSON.stringify(data.post, null, 2)}
         </pre>
       </code>
+      <img src={data?.post?.imgSrc}/>
+      <p>{data?.post?.body}</p>
     </Layout>
   );
 }

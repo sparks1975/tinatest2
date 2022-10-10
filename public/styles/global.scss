@@ -1,0 +1,18 @@
+@import "mixins";
+
+.featured__headline {
+    margin: 0 0 10px;
+}
+
+.featured__subheadline {
+    color: $color-3;
+    margin: 0 0 10px;
+}
+
+.btn {
+    padding: 16px 24px;
+    display: inline-block;
+    text-align: center;
+    background: $color-3;
+    color: $color-4;
+}
