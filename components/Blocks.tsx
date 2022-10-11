@@ -2,6 +2,7 @@ import React from "react";
 import type { Home } from "../.tina/__generated__/types";
 import { Hero } from "./blocks/hero";
 import { ImageText50 } from "./blocks/ImageText50";
+import { Features } from "./blocks/Features";
 
 export const Blocks = (props: Home) => {
   return (
@@ -25,6 +26,15 @@ export const Blocks = (props: Home) => {
                     key={i + block.__typename}
                   >
                     <ImageText50 data={block} parentField={`blocks.${i}`} />
+                  </div>
+                  );
+                case "HomeBlocksFeatures":
+                  return (
+                    <div
+                    data-tinafield={`blocks.${i}`}
+                    key={i + block.__typename}
+                  >
+                    <Features data={block} parentField={`blocks.${i}`} />
                   </div>
                   );
               default:

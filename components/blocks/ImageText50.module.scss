@@ -42,5 +42,19 @@
             }
         
     }
+
+    &--img_top {
+        
+        .text {
+            grid-column: auto / span 24;     
+        }
+
+        .image {
+            grid-column: auto / span 24;
+            max-width: 1000px;
+            margin: 0 auto 40px;           
+        }
+    
+}
 }
 

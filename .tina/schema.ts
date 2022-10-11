@@ -2,6 +2,75 @@ import { defineConfig, defineSchema, RouteMappingPlugin } from "tinacms";
 import { client } from "./__generated__/client";
 import type { TinaTemplate } from "tinacms";
 
+const defaultFeature = {
+  title: "Here's Another Feature",
+  text: "This is where you might talk about the feature, if this wasn't just filler text.",
+  icon: {
+    color: "",
+    style: "float",
+    name: "",
+  },
+};
+
+const featureBlock: TinaTemplate = {
+  name: "features",
+  label: "Features",
+  ui: {
+    previewSrc: "/blocks/features.png",
+    defaultItem: {
+      items: [defaultFeature, defaultFeature, defaultFeature],
+    },
+  },
+  fields: [
+    {
+      type: "object",
+      label: "Feature Items",
+      name: "items",
+      list: true,
+      ui: {
+        defaultItem: {
+          ...defaultFeature,
+        },
+      },
+      fields: [
+        {
+          type: "string",
+          label: "Title",
+          name: "title",
+        },
+        {
+          type: "string",
+          label: "Text",
+          name: "text",
+          ui: {
+            component: "textarea",
+          },
+        },
+        {
+          type: 'image',
+          label: 'Image',
+          name: 'image',
+        },
+        {
+          type: 'string',
+          label: 'Image Alt Tag',
+          name: 'img_alt',
+        },
+      ],
+    },
+    {
+      type: "string",
+      label: "Color",
+      name: "color",
+      options: [
+        { label: "Default", value: "default" },
+        { label: "Tint", value: "tint" },
+        { label: "Primary", value: "primary" },
+      ],
+    },
+  ],
+};
+
 const imageText50Block:TinaTemplate = {
   name: 'imageText50',
   label: 'Image + Text 50/50',
@@ -137,7 +206,7 @@ const schema = defineSchema({
           list: true,
           name: 'blocks',
           label: 'Sections',
-          templates: [heroBlock, imageText50Block],
+          templates: [heroBlock, imageText50Block, featureBlock],
         },
       ],
     },
