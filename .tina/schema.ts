@@ -80,16 +80,6 @@ const featureBlock: TinaTemplate = {
         },
       ],
     },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
-    },
   ],
 };
 
