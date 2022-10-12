@@ -9,6 +9,8 @@ type FeatureParams = {
   tinaField: string
 }
 
+const getLayoutClass = (layout: string) => styles[`features--${layout}`];
+
 const Feature = ({ featuresColor, data, tinaField }: FeatureParams) => {
   return (
     <div
@@ -46,7 +48,7 @@ const Feature = ({ featuresColor, data, tinaField }: FeatureParams) => {
 export const Features: BlockComponent<HomeBlocksFeatures> = ({ data, parentField }) => {
   return (
     <div
-      className={styles.features}
+      className={`${styles.features} ${getLayoutClass(data.layout)}`}
     >
       {data.items &&
         data.items.map(function (block, i) {

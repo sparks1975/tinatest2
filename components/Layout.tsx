@@ -5,9 +5,6 @@ import styles from "./Layout.module.scss";
 export const Layout = (props) => {
   return (
     <div
-      style={{
-        margin: '3rem',
-      }}
     >
       <Head>
         <title>Tina App</title>

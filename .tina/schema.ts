@@ -62,6 +62,25 @@ const featureBlock: TinaTemplate = {
       ],
     },
     {
+      type: 'string',
+      label: 'Layout',
+      name: 'layout',
+      options: [
+        {
+          label: '2 up',
+          value: '50'
+        },
+        {
+          label: '4 up',
+          value: '25'
+        },
+        {
+          label: 'Full Width',
+          value: '100'
+        },
+      ],
+    },
+    {
       type: "string",
       label: "Color",
       name: "color",
