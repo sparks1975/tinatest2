@@ -1,29 +1,29 @@
 import * as React from "react";
-import { HomeBlocksFeatures, HomeBlocksFeaturesItems } from '../../.tina/__generated__/types';
+import { HomeBlocksFeatures, HomeBlocksFeaturesItems } from '../../../.tina/__generated__/types';
+import { BlockComponent } from '../_shared';
+
 import styles from "./Features.module.scss";
-import { BlockComponent } from './_shared';
 
 type FeatureParams = {
-  featuresColor: string
   data: HomeBlocksFeaturesItems
   tinaField: string
 }
 
 const getLayoutClass = (layout: string) => styles[`features--${layout}`];
 
-const Feature = ({ featuresColor, data, tinaField }: FeatureParams) => {
+const Feature = ({ data, tinaField }: FeatureParams) => {
   return (
     <div
       data-tinafield={`${tinaField}`}
       className={styles.feature}
     >
-    {(
-        (data.image || []).length > 0 ? 
-            <div className={styles.image}>
-                <img src={data.image} alt={data.image_alt} />
-            </div> :
-         null
-    )}
+      {(
+        (data.image || []).length > 0 ?
+          <div className={styles.image}>
+            <img src={data.image} alt={data.image_alt} />
+          </div> :
+          null
+      )}
 
       {data.title && (
         <h3
@@ -57,7 +57,6 @@ export const Features: BlockComponent<HomeBlocksFeatures> = ({ data, parentField
               tinaField={`${parentField}.items.${i}`}
               key={i}
               data={block}
-              featuresColor={data.color}
             />
           );
         })}

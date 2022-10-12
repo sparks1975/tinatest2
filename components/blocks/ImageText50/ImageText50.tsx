@@ -1,7 +1,7 @@
 import * as React from "react";
-import { HomeBlocksImageText50 } from '../../.tina/__generated__/types';
+import { HomeBlocksImageText50 } from '../../../.tina/__generated__/types';
 import styles from "./ImageText50.module.scss";
-import { BlockComponent } from './_shared';
+import { BlockComponent } from '../_shared';
 
 const getTemplateClass = (template: string) => styles[`image_text_50--${template}`];
 const getCustomClass = (custom: string) => styles[`image_text_50--${custom}`];
@@ -17,10 +17,10 @@ export const ImageText50: BlockComponent<HomeBlocksImageText50> = ({ data, paren
           className={styles.featured__subheadline}>{data.tagline}
         </h3>
 
-        <h2 
-        data-tinafield={`${parentField}.headline`}
-        className={`${styles.featured__headline} ${getHeadlineClass(data.headline_class)}`}>
-        {data.headline}
+        <h2
+          data-tinafield={`${parentField}.headline`}
+          className={`${styles.featured__headline} ${getHeadlineClass(data.headline_class)}`}>
+          {data.headline}
         </h2>
 
         {(
