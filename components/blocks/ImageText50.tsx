@@ -2,10 +2,11 @@ import * as React from "react";
 import styles from "./ImageText50.module.scss";
 
 const getTemplateClass = (template: string) => styles[`image_text_50--${template}`];
+const getCustomClass = (custom: string) => styles[`image_text_50--${custom}`];
 
 export const ImageText50 = ({data, parentField}) => {
     return (
-        <div className={`${styles.image_text_50} ${getTemplateClass(data.template)}`}>
+        <div className={`${styles.image_text_50} ${getTemplateClass(data.template)} ${getCustomClass(data.custom)}`}>
             <div className={styles.text}>
 
                 <h3 

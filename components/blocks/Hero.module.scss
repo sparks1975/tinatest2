@@ -2,6 +2,7 @@
 
 .hero {
     @include grid;
+    padding: 20px 20px 60px;
 
     img {
         max-width: 100%;

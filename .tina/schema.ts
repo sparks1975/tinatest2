@@ -105,6 +105,17 @@ const imageText50Block:TinaTemplate = {
     },
     {
       type: 'string',
+      label: 'Custom Class',
+      name: 'custom',
+      options: [
+        {
+          label: 'Inset',
+          value: 'inset'
+        }
+      ],
+    },
+    {
+      type: 'string',
       label: 'Tagline',
       name: 'tagline',
     },
