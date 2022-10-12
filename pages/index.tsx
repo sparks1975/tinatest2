@@ -27,7 +27,7 @@ export default function Home(props) {
           {JSON.stringify(data.home, null, 2)}
         </pre>
       </code> */}
-    <Blocks {...data.home} />  
+    <Blocks {...(data?.home || [])} />  
     <TinaMarkdown content={content} />
     </Layout>
   );

@@ -5,11 +5,14 @@ import type { TinaTemplate } from "tinacms";
 const defaultFeature = {
   title: "Here's Another Feature",
   text: "This is where you might talk about the feature, if this wasn't just filler text.",
-  icon: {
-    color: "",
-    style: "float",
-    name: "",
-  },
+  image: "",
+  image_alt: "This is the image alt text.",
+  // there is no `icon` field on the 
+  // icon: {
+  //     color: "",
+  //     style: "float",
+  //     name: "",
+  // },
 };
 
 const featureBlock: TinaTemplate = {
@@ -54,7 +57,7 @@ const featureBlock: TinaTemplate = {
         {
           type: 'string',
           label: 'Image Alt Tag',
-          name: 'img_alt',
+          name: 'image_alt',
         },
       ],
     },
@@ -71,7 +74,7 @@ const featureBlock: TinaTemplate = {
   ],
 };
 
-const imageText50Block:TinaTemplate = {
+const imageText50Block: TinaTemplate = {
   name: 'imageText50',
   label: 'Image + Text 50/50',
   ui: {
@@ -171,7 +174,7 @@ const imageText50Block:TinaTemplate = {
   ],
 }
 
-const heroBlock:TinaTemplate = {
+const heroBlock: TinaTemplate = {
   name: 'hero',
   label: 'Hero',
   ui: {
@@ -305,7 +308,7 @@ export const tinaConfig = defineConfig({
   schema,
   cmsCallback: (cms) => {
     const RouteMapping = new RouteMappingPlugin((collection, document) => {
-      if ("home" === collection.name && "home" === document._sys.filename){
+      if ("home" === collection.name && "home" === document._sys.filename) {
         return "/";
       }
 
