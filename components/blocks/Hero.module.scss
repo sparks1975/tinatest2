@@ -2,7 +2,7 @@
 
 .hero {
     @include grid;
-    padding: 20px 20px 60px;
+    padding: 60px 20px 80px;
 
     img {
         max-width: 100%;
@@ -29,6 +29,20 @@
 
         @include tablet-min {
           grid-column: auto / span 10;
+        }
+
+        h2 {
+          background-color: hsla(197, 100%, 63%, 1) 100%;
+          background-image: $gradient-blue-purple;
+          background-size: 100%;
+          -webkit-background-clip: text;
+          -moz-background-clip: text;
+          -webkit-text-fill-color: transparent; 
+          -moz-text-fill-color: transparent;
+        }
+
+        p:last-of-type {
+          margin-bottom: 40px;
         }
         
     }

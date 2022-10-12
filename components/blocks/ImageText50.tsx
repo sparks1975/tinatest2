@@ -3,6 +3,7 @@ import styles from "./ImageText50.module.scss";
 
 const getTemplateClass = (template: string) => styles[`image_text_50--${template}`];
 const getCustomClass = (custom: string) => styles[`image_text_50--${custom}`];
+const getHeadlineClass = (headline_class: string) => styles[`featured__headline--${headline_class}`];
 
 export const ImageText50 = ({data, parentField}) => {
     return (
@@ -16,7 +17,7 @@ export const ImageText50 = ({data, parentField}) => {
 
                 <h2 
                 data-tinafield={`${parentField}.headline`}
-                className={styles.featured__headline}>
+                className={`${styles.featured__headline} ${getHeadlineClass(data.headline_class)}`}>
                 {data.headline}
                 </h2>
 

@@ -12,6 +12,36 @@
         @include tablet-min {
           grid-column: auto / span 12;
         }
+
+        .featured__headline {
+
+            &--blue_purple {
+                background-image: $gradient-blue-purple;
+                background-size: 100%;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                -moz-text-fill-color: transparent;
+            }
+
+            &--pink_blue {
+                background-image: $gradient-pink-blue;
+                background-size: 100%;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                -moz-text-fill-color: transparent;
+            }
+
+            &--gold_orange {
+                background-image: $gradient-gold-orange;
+                background-size: 100%;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent; 
+                -moz-text-fill-color: transparent;
+            }
+        }
         
     }
 
@@ -50,7 +80,20 @@
     &--img_top {
         
         .text {
-            grid-column: auto / span 24;     
+            grid-column: auto / span 24;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; 
+            
+            h3, h2, p {
+                text-align: center;
+                width: 100%;
+            }
+
+            p:last-of-type {
+                margin-bottom: 40px;
+            }
         }
 
         .image {
@@ -82,6 +125,21 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
+        }
+
+        &.image_text_50--img_top {
+            
+            .image {
+                margin: -120px auto 60px;
+            }
+
+            .text {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center; 
+            }
+
         }
     }
 }

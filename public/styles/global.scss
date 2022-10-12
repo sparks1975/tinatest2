@@ -1,5 +1,6 @@
 @import "mixins";
 
+
 .featured__headline {
     margin: 0 0 10px;
 }
@@ -15,4 +16,7 @@
     text-align: center;
     background: $color-3;
     color: $color-4;
+    border-radius: 60px;
+    text-decoration: none;
+    min-width: 180px;
 }

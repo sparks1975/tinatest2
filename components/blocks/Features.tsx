@@ -7,10 +7,14 @@ export const Feature = ({ featuresColor, data, tinaField }) => {
       data-tinafield={`${tinaField}`}
       className={styles.feature}
     >
-        <div className={styles.image}>
-            <img src={data.image} alt={data.image_alt} />
-        </div>
-        
+    {(
+        (data.image || []).length > 0 ? 
+            <div className={styles.image}>
+                <img src={data.image} alt={data.image_alt} />
+            </div> :
+         null
+    )}
+
       {data.title && (
         <h3
           data-tinafield={`${tinaField}.title`}

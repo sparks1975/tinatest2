@@ -67,5 +67,11 @@ $desktop-wide-min: 1441px;
 
 $color-1: #101418 !default;
 $color-2: #F1F6F9 !default;
-$color-3: #92DCE5 !default;
+$color-3: #40C9FF !default;
 $color-4: #171430 !default;
+
+$gradient-blue-purple: linear-gradient(90deg, hsla(197, 100%, 63%, 1) 0%, hsla(294, 100%, 55%, 1) 100%);
+
+$gradient-pink-blue: linear-gradient(90deg, hsla(339, 100%, 55%, 1) 0%, hsla(197, 100%, 64%, 1) 100%);
+
+$gradient-gold-orange: linear-gradient(90deg, hsla(42, 93%, 57%, 1) 0%, hsla(358, 78%, 62%, 1) 100%);

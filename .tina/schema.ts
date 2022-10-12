@@ -126,6 +126,25 @@ const imageText50Block:TinaTemplate = {
     },
     {
       type: 'string',
+      label: 'Headline Class',
+      name: 'headline_class',
+      options: [
+        {
+          label: 'Blue to Purple',
+          value: 'blue_purple'
+        },
+        {
+          label: 'Pink to Blue',
+          value: 'pink_blue'
+        },
+        {
+          label: 'Gold to Orange',
+          value: 'gold_orange'
+        },
+      ],
+    },
+    {
+      type: 'string',
       label: 'Text',
       name: 'text',
     },
@@ -186,6 +205,16 @@ const heroBlock:TinaTemplate = {
       type: 'image',
       label: 'Hero image',
       name: 'image',
+    },
+    {
+      type: 'string',
+      label: 'Button Label',
+      name: 'btn_label',
+    },
+    {
+      type: 'string',
+      label: 'Button Link',
+      name: 'btn_link',
     },
   ],
 }

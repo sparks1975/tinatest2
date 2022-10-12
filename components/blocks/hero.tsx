@@ -31,6 +31,12 @@ export const Hero = ({data, parentField}) => {
                 {data.text}
               </p>
             )}
+            <a 
+              className={styles.btn}
+              href={data.btn_link}
+            >
+              {data.btn_label}
+            </a>
           </div>
           <div className={styles.hero__image}>
             {data.image && (
