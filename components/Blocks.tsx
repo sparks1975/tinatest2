@@ -1,6 +1,6 @@
 import React from "react";
 import type { Home } from "../.tina/__generated__/types";
-import { Hero } from "./blocks/hero";
+import { Hero } from "./blocks/Hero";
 import { ImageText50 } from "./blocks/ImageText50";
 import { Features } from "./blocks/Features";
 

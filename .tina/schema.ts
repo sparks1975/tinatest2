@@ -3,296 +3,304 @@ import { client } from "./__generated__/client";
 import type { TinaTemplate } from "tinacms";
 
 const defaultFeature = {
-  title: "Here's Another Feature",
-  text: "This is where you might talk about the feature, if this wasn't just filler text.",
-  icon: {
-    color: "",
-    style: "float",
-    name: "",
-  },
+    title: "Here's Another Feature",
+    text: "This is where you might talk about the feature, if this wasn't just filler text.",
+    image: "",
+    image_alt: "This is the image alt text.",
+    // there is no `icon` field on the 
+    // icon: {
+    //     color: "",
+    //     style: "float",
+    //     name: "",
+    // },
 };
 
 const featureBlock: TinaTemplate = {
-  name: "features",
-  label: "Features",
-  ui: {
-    previewSrc: "/blocks/features.png",
-    defaultItem: {
-      items: [defaultFeature, defaultFeature, defaultFeature],
-    },
-  },
-  fields: [
-    {
-      type: "object",
-      label: "Feature Items",
-      name: "items",
-      list: true,
-      ui: {
+    name: "features",
+    label: "Features",
+    ui: {
+        previewSrc: "/blocks/features.png",
         defaultItem: {
-          ...defaultFeature,
+            items: [defaultFeature, defaultFeature, defaultFeature],
         },
-      },
-      fields: [
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: "string",
-          label: "Text",
-          name: "text",
-          ui: {
-            component: "textarea",
-          },
-        },
-        {
-          type: 'image',
-          label: 'Image',
-          name: 'image',
-        },
-        {
-          type: 'string',
-          label: 'Image Alt Tag',
-          name: 'img_alt',
-        },
-      ],
     },
-    {
-      type: "string",
-      label: "Color",
-      name: "color",
-      options: [
-        { label: "Default", value: "default" },
-        { label: "Tint", value: "tint" },
-        { label: "Primary", value: "primary" },
-      ],
-    },
-  ],
+    fields: [
+        {
+            type: "object",
+            label: "Feature Items",
+            name: "items",
+            list: true,
+            ui: {
+                defaultItem: {
+                    ...defaultFeature,
+                },
+            },
+            fields: [
+                {
+                    type: "string",
+                    label: "Title",
+                    name: "title",
+                },
+                {
+                    type: "string",
+                    label: "Text",
+                    name: "text",
+                    ui: {
+                        component: "textarea",
+                    },
+                },
+                {
+                    type: 'image',
+                    label: 'Image',
+                    name: 'image',
+                },
+                {
+                    type: 'string',
+                    label: 'Image Alt Tag',
+                    name: 'image_alt',
+                },
+            ],
+        },
+        {
+            type: "string",
+            label: "Color",
+            name: "color",
+            options: [
+                { label: "Default", value: "default" },
+                { label: "Tint", value: "tint" },
+                { label: "Primary", value: "primary" },
+            ],
+        },
+    ],
 };
 
-const imageText50Block:TinaTemplate = {
-  name: 'imageText50',
-  label: 'Image + Text 50/50',
-  ui: {
-    defaultItem: {
-      tagline: "Here's some text above the other text",
-      headline: 'This Big Text is Totally Awesome',
-      text:
-        'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
-      template: 'img_left',
+const imageText50Block: TinaTemplate = {
+    name: 'imageText50',
+    label: 'Image + Text 50/50',
+    ui: {
+        defaultItem: {
+            tagline: "Here's some text above the other text",
+            headline: 'This Big Text is Totally Awesome',
+            text:
+                'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+            template: 'img_left',
+        },
     },
-  },
-  fields: [
-    {
-      type: 'string',
-      label: 'Template',
-      name: 'template',
-      options: [
+    fields: [
         {
-          label: 'Image Left',
-          value: 'img_left'
+            type: 'string',
+            label: 'Template',
+            name: 'template',
+            options: [
+                {
+                    label: 'Image Left',
+                    value: 'img_left'
+                },
+                {
+                    label: 'Image Right',
+                    value: 'img_right'
+                },
+                {
+                    label: 'Image Top',
+                    value: 'img_top'
+                },
+            ],
         },
         {
-          label: 'Image Right',
-          value: 'img_right'
+            type: 'string',
+            label: 'Custom Class',
+            name: 'custom',
+            options: [
+                {
+                    label: 'Inset',
+                    value: 'inset'
+                }
+            ],
         },
         {
-          label: 'Image Top',
-          value: 'img_top'
+            type: 'string',
+            label: 'Tagline',
+            name: 'tagline',
         },
-      ],
-    },
-    {
-      type: 'string',
-      label: 'Custom Class',
-      name: 'custom',
-      options: [
         {
-          label: 'Inset',
-          value: 'inset'
-        }
-      ],
-    },
-    {
-      type: 'string',
-      label: 'Tagline',
-      name: 'tagline',
-    },
-    {
-      type: 'string',
-      label: 'Headline',
-      name: 'headline',
-    },
-    {
-      type: 'string',
-      label: 'Text',
-      name: 'text',
-    },
-    {
-      type: 'string',
-      label: 'Button Label',
-      name: 'btn_label',
-    },
-    {
-      type: 'string',
-      label: 'Button Link',
-      name: 'btn_link',
-    },
-    {
-      type: 'image',
-      label: 'Image',
-      name: 'image',
-    },
-    {
-      type: 'string',
-      label: 'Image Alt Tag',
-      name: 'img_alt',
-    },
-  ],
+            type: 'string',
+            label: 'Headline',
+            name: 'headline',
+        },
+        {
+            type: 'string',
+            label: 'Text',
+            name: 'text',
+        },
+        {
+            type: 'string',
+            label: 'Button Label',
+            name: 'btn_label',
+        },
+        {
+            type: 'string',
+            label: 'Button Link',
+            name: 'btn_link',
+        },
+        {
+            type: 'image',
+            label: 'Image',
+            name: 'image',
+        },
+        {
+            type: 'string',
+            label: 'Image Alt Tag',
+            name: 'image_alt',
+        },
+    ],
 }
 
-const heroBlock:TinaTemplate = {
-  name: 'hero',
-  label: 'Hero',
-  ui: {
-    defaultItem: {
-      tagline: "Here's some text above the other text",
-      headline: 'This Big Text is Totally Awesome',
-      text:
-        'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+const heroBlock: TinaTemplate = {
+    name: 'hero',
+    label: 'Hero',
+    ui: {
+        defaultItem: {
+            tagline: "Here's some text above the other text",
+            headline: 'This Big Text is Totally Awesome',
+            text:
+                'Phasellus scelerisque, libero eu finibus rutrum, risus risus accumsan libero, nec molestie urna dui a leo.',
+        },
     },
-  },
-  fields: [
-    {
-      type: 'string',
-      label: 'Tagline',
-      name: 'tagline',
-    },
-    {
-      type: 'string',
-      label: 'Headline',
-      name: 'headline',
-    },
-    {
-      type: 'string',
-      label: 'Text',
-      name: 'text',
-      // ui: {
-      //   component: 'markdown',
-      // },
-    },
-    {
-      type: 'image',
-      label: 'Hero image',
-      name: 'image',
-    },
-  ],
+    fields: [
+        {
+            type: 'string',
+            label: 'Tagline',
+            name: 'tagline',
+        },
+        {
+            type: 'string',
+            label: 'Headline',
+            name: 'headline',
+        },
+        {
+            type: 'string',
+            label: 'Text',
+            name: 'text',
+            // ui: {
+            //   component: 'markdown',
+            // },
+        },
+        {
+            type: 'image',
+            label: 'Hero image',
+            name: 'image',
+        },
+        {
+            type: 'string',
+            label: 'Hero alt text',
+            name: 'alt_text',
+        }
+    ],
 }
 
 const schema = defineSchema({
-  config: {
-    clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
-    branch:
-      process.env.NEXT_PUBLIC_TINA_BRANCH ||
-      process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
-      process.env.HEAD,
-    token: process.env.TINA_TOKEN,
-    media: {
-      tina: {
-        mediaRoot: "uploads",
-        publicFolder: "public",
-      },
+    config: {
+        clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+        branch:
+            process.env.NEXT_PUBLIC_TINA_BRANCH ||
+            process.env.NEXT_PUBLIC_VERCEL_GIT_COMMIT_REF ||
+            process.env.HEAD,
+        token: process.env.TINA_TOKEN,
+        media: {
+            tina: {
+                mediaRoot: "uploads",
+                publicFolder: "public",
+            },
+        },
     },
-  },
-  collections: [
-    {
-      label: "Home Page",
-      name: "home",
-      path: "content",
-      format: "mdx",
-      fields: [
+    collections: [
         {
-          type: 'object',
-          list: true,
-          name: 'blocks',
-          label: 'Sections',
-          templates: [heroBlock, imageText50Block, featureBlock],
-        },
-      ],
-    },
-    {
-      label: "Page Content",
-      name: "page",
-      path: "content/page",
-      format: "mdx",
-      fields: [
-        {
-          type: 'image',
-          label: 'Hero image',
-          name: 'hero',
+            label: "Home Page",
+            name: "home",
+            path: "content",
+            format: "mdx",
+            fields: [
+                {
+                    type: 'object',
+                    list: true,
+                    name: 'blocks',
+                    label: 'Sections',
+                    templates: [heroBlock, imageText50Block, featureBlock],
+                },
+            ],
         },
         {
-          name: "body",
-          label: "Main Content",
-          type: "rich-text",
-          isBody: true,
-        },
-      ]
-    },
-    {
-      label: "Blog Posts",
-      name: "post",
-      path: "content/post",
-      fields: [
-        {
-          type: "string",
-          label: "Title",
-          name: "title",
-        },
-        {
-          type: 'image',
-          label: 'Hero image',
-          name: 'imgSrc',
+            label: "Page Content",
+            name: "page",
+            path: "content/page",
+            format: "mdx",
+            fields: [
+                {
+                    type: 'image',
+                    label: 'Hero image',
+                    name: 'hero',
+                },
+                {
+                    name: "body",
+                    label: "Main Content",
+                    type: "rich-text",
+                    isBody: true,
+                },
+            ]
         },
         {
-          type: "string",
-          label: "Blog Post Body",
-          name: "body",
-          isBody: true,
-          ui: {
-            component: "textarea",
-          },
+            label: "Blog Posts",
+            name: "post",
+            path: "content/post",
+            fields: [
+                {
+                    type: "string",
+                    label: "Title",
+                    name: "title",
+                },
+                {
+                    type: 'image',
+                    label: 'Hero image',
+                    name: 'imgSrc',
+                },
+                {
+                    type: "string",
+                    label: "Blog Post Body",
+                    name: "body",
+                    isBody: true,
+                    ui: {
+                        component: "textarea",
+                    },
+                },
+            ],
         },
-      ],
-    },
-  ],
+    ],
 });
 
 export default schema;
 
 export const tinaConfig = defineConfig({
-  client,
-  schema,
-  cmsCallback: (cms) => {
-    const RouteMapping = new RouteMappingPlugin((collection, document) => {
-      if ("home" === collection.name && "home" === document._sys.filename){
-        return "/";
-      }
+    client,
+    schema,
+    cmsCallback: (cms) => {
+        const RouteMapping = new RouteMappingPlugin((collection, document) => {
+            if ("home" === collection.name && "home" === document._sys.filename) {
+                return "/";
+            }
 
-      if (["page"].includes(collection.name)) {
-        return `/${document._sys.filename}`;
-      }
+            if (["page"].includes(collection.name)) {
+                return `/${document._sys.filename}`;
+            }
 
-      if (["post"].includes(collection.name)) {
-        return `/posts/${document._sys.filename}`;
-      }
+            if (["post"].includes(collection.name)) {
+                return `/posts/${document._sys.filename}`;
+            }
 
-      return `/${collection.name}/${document._sys.filename}`;
-    });
+            return `/${collection.name}/${document._sys.filename}`;
+        });
 
-    cms.plugins.add(RouteMapping);
+        cms.plugins.add(RouteMapping);
 
-    return cms;
-  },
+        return cms;
+    },
 });
