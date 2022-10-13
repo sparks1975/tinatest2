@@ -1,7 +1,7 @@
 import * as React from "react";
-import { HomeBlocksHero } from '../../.tina/__generated__/types';
+import { HomeBlocksHero } from '../../../.tina/__generated__/types';
 import styles from "./Hero.module.scss";
-import { BlockComponent } from './_shared';
+import { BlockComponent } from '../_shared';
 
 export const Hero: BlockComponent<HomeBlocksHero> = ({ data, parentField }) => {
   return (
@@ -31,7 +31,7 @@ export const Hero: BlockComponent<HomeBlocksHero> = ({ data, parentField }) => {
             {data.text}
           </p>
         )}
-        <a 
+        <a
           className={styles.btn}
           href={data.btn_link}
         >
