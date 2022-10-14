@@ -57,6 +57,16 @@ export const featureBlock: TinaTemplate = {
           label: 'Image Alt Tag',
           name: 'image_alt',
         },
+        {
+          type: 'string',
+          label: 'Button Link',
+          name: 'btn_link',
+        },
+        {
+          type: 'string',
+          label: 'Button Label',
+          name: 'btn_label',
+        },
       ],
     },
     {

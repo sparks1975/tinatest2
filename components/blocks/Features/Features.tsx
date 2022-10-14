@@ -19,7 +19,10 @@ const Feature = ({ data, tinaField }: FeatureParams) => {
     >
       {(
         (data.image || []).length > 0 ?
-          <div className={styles.image}>
+          <div 
+          className={styles.image}
+          data-tinafield={`${tinaField}.image`}
+          >
             <img src={data.image} alt={data.image_alt} />
           </div> :
           null
@@ -28,7 +31,7 @@ const Feature = ({ data, tinaField }: FeatureParams) => {
       {data.title && (
         <h3
           data-tinafield={`${tinaField}.title`}
-          className=""
+          className={styles.headline}
         >
           {data.title}
         </h3>
@@ -36,10 +39,24 @@ const Feature = ({ data, tinaField }: FeatureParams) => {
       {data.text && (
         <p
           data-tinafield={`${tinaField}.text`}
-          className=""
+          className={styles.text}
         >
           {data.text}
         </p>
+      )}
+      {data.btn_label && (
+        <a
+          data-tinafield={`${tinaField}.btn_link`}
+          className={styles.button}
+          href={data.btn_link}
+        >
+          <span
+          data-tinafield={`${tinaField}.btn_label`}
+          >
+            {data.btn_label}
+          </span>
+          
+        </a>
       )}
     </div>
   );
